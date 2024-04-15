@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Performance Test Report</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        font-size: 40px;
+        font-weight: bold;
+        color: #0074d9; /* Màu xanh dương */
+        text-align: center;
+      }
+      p {
+        font-style: italic;
+      }
+      .info {
+        font-weight: bold;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Performance Test Report</h1>
+
+    <p>
+      <span class="info">Environment:</span> ABC <br />
+      <span class="info">QC name:</span> ABC <br />
+      <span class="info">Run time:</span> <span id="current-time"></span>
+    </p>
+
+    <script>
+      // Lấy giờ hiện tại và hiển thị nó trong phần "Run time"
+      document.getElementById("current-time").textContent =
+        new Date().toLocaleString();
+    </script>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Transaction Name</th>
+          <th>Status</th>
+          <th>Total Requests</th>
+          <th>Response Time (Min)</th>
+          <th>Response Time (Avg)</th>
+          <th>Response Time (Max)</th>
+          <th>Requests Passed</th>
+          <th>Requests Failed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>About→IndexPage</td>
+          <td>P</td>
+          <td>1234</td>
+          <td>1.36</td>
+          <td>1.65</td>
+          <td>3.45</td>
+          <td>234</td>
+          <td>234</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

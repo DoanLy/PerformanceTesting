@@ -1,0 +1,40 @@
+
+- Baseline Response Time: Đo thời gian phản hồi của một yêu cầu API đơn giản trong điều kiện bình thường để thiết lập đường cơ sở hiệu suất.
+
+- Stress Testing: Gửi một số lượng lớn yêu cầu đồng thời tới API để đánh giá hiệu suất của nó khi chịu tải nặng.
+
+- Concurrency Testing:  Đánh giá cách API xử lý một số yêu cầu đồng thời được chỉ định mà không làm giảm hiệu suất.
+
+- Ramp-up Testing: Tăng dần số lượng yêu cầu theo thời gian để xác định điểm giới hạn hiệu suất và điểm giới hạn của API.
+
+- Peak Load Testing: Kiểm tra hiệu suất của API vào thời điểm sử dụng cao điểm để đảm bảo API có thể xử lý lưu lượng dự kiến ​​tối đa.
+
+- Endurance Testing: Liên tục gửi yêu cầu tới API trong thời gian dài để đánh giá tính ổn định của nó theo thời gian.
+
+- Scalability Testing: Tăng tải dần dần và đo lường mức độ mở rộng của API bằng cách thêm nhiều tài nguyên hơn (ví dụ: máy chủ) để duy trì hiệu suất.
+
+- Resource Utilization Testing:  Giám sát việc sử dụng CPU, bộ nhớ và mạng trong khi tiến hành kiểm tra hiệu suất để xác định các tắc nghẽn tài nguyên.
+
+- Response Time Distribution: Phân tích phân bổ thời gian phản hồi để xác định các vấn đề ngoại lệ và hiệu suất.
+
+- Latency Testing: Đo độ trễ mạng giữa client và máy chủ API để đảm bảo độ trễ thấp cho người dùng.
+
+- Throughput Testing: Xác định số lượng giao dịch tối đa mà API có thể xử lý trên một đơn vị thời gian trong khi vẫn duy trì thời gian phản hồi có thể chấp nhận được.
+
+- Error Rate Testing:  Theo dõi và ghi lại tỷ lệ lỗi hoặc yêu cầu không thành công trong quá trình kiểm tra tải để đánh giá khả năng xử lý lỗi và khả năng phục hồi.
+
+- Caching Performance:  Đánh giá tác động của bộ nhớ đệm đến thời gian phản hồi và việc sử dụng tài nguyên.
+
+- Data Volume Testing: Kiểm tra API với các khối lượng dữ liệu khác nhau (ví dụ: tải trọng nhỏ, trung bình, lớn) để đánh giá hiệu suất của nó với các kích thước dữ liệu khác nhau.
+
+- Geographical Load Testing:  Mô phỏng các yêu cầu từ các vị trí địa lý khác nhau để đánh giá hiệu suất và thời gian phản hồi toàn cầu của API.
+
+- Concurrency with Authentication: Đánh giá cách API xử lý các yêu cầu đồng thời với xác thực, bao gồm cả xác thực mã thông báo.
+
+- Database Load Testing:  Đánh giá tác động của các yêu cầu API trên cơ sở dữ liệu được liên kết bằng cách đo thời gian phản hồi truy vấn.
+
+- Long-Running Transactions: Thử nghiệm các giao dịch mất nhiều thời gian để hoàn thành và đánh giá tác động của chúng đối với hiệu suất tổng thể của hệ thống.
+
+- Rate Limiting Stress Testing: Kiểm tra cách API xử lý các yêu cầu quá mức khi áp dụng giới hạn tốc độ.
+
+- Failover Testing: Mô phỏng lỗi máy chủ và kiểm tra khả năng chuyển đổi dự phòng của API sang máy chủ dự phòng trong khi vẫn duy trì hiệu suất.
