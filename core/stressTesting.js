@@ -15,8 +15,7 @@ export const stressTesting = async (
   for (let index = 0; index < numTimes; index++) {
     const apiCallPromises = [];
     for (let index = 0; index < numReq; index++) {
-      const response = func();
-      apiCallPromises.push(response);
+      apiCallPromises.push(func());
     }
     const result = await Promise.all(apiCallPromises);
     results = [...results, ...result];

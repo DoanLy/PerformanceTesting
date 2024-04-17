@@ -1,14 +1,3 @@
-export const config = {
-  baseURL: "http://aurora-api.dhttech.com/aurora-integration-dev/",
-  headers: {
-    accept: "application/json, text/plain, */*",
-    "accept-language": "en,en-US;q=0.9,vi;q=0.8",
-    authorization:
-      "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJBVzQtYXZYSUdmVGg1Yl9wM2IzaGJKako3dEwzczJWOFlkWXV1eWV0TTd3In0",
-    "request-language": "en-US",
-  },
-};
-
 export const bookStoreConfig = {
   baseURL: "https://demoqa.com/",
   headers: {

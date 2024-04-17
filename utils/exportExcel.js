@@ -87,7 +87,7 @@ export async function exportToExcel(
       header: "API",
       key: "urlApi",
     },
-    { header: "Code", key: "code" },
+    { header: "Data Request", key: "dataRequest" },
     { header: "Status", key: "status" },
     { header: "Response Data", key: "response" },
   ];

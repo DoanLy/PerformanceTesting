@@ -4,9 +4,9 @@ import fs from "fs";
 
 export const createAccountUser = async () => {
   try {
-    const randomUsername = Math.floor(Math.random() * 1000000) + 1000;
+    const randomUsername = Math.floor(Math.random() * 300) + 90;
     const dataReq = {
-      userName: `lydtt${randomUsername}`,
+      userName: `lydtt292`,
       password: "Nguoiemyeu@2704",
     };
 
@@ -30,15 +30,11 @@ export const createAccountUser = async () => {
     return data;
   } catch (error) {
     return {
+      error: true,
       status: error?.response?.status,
-      time: error?.responseTime,
+      message: error?.response.data.message,
+      urlApi: error?.response.config.url,
+      dataRequest: error?.response.config.data,
     };
   }
 };
-
-const callFuncAPI = async () => {
-  const resultVerifyListOrder = await createAccountUser();
-  console.log(resultVerifyListOrder);
-};
-
-callFuncAPI();
