@@ -57,4 +57,4 @@
 
 ## Test Report:
 
-![Screenshot from 2022-01-28 16-20-22](https://user-images.githubusercontent.com/38497405/151536227-68fa1ed1-415b-4d24-aca0-c039279b58d3.png)
+![Screenshot from 2022-01-28 16-20-22](data/report.png)
