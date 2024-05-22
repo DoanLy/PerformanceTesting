@@ -17,7 +17,7 @@
 
 ## Project Architecture: <br>
 
-![Cypress_project_Arch](D:\CODE\PerformanceTesting\data\FlowChart.png)
+![Cypress_project_Arch](data/FlowChart.png)
 
 ---
 
@@ -50,18 +50,11 @@
 
 1. Open cmd to the project folder using VS Code
 2. Type this command:
-   npm run test
+   npm run dev
 3. After Complete the test execution Report will generate to reports Folder
-4. Run the index.html file using any live server extension(e.g. Live Server) to view the html report
 
 ---
 
-## Test Report view from Command line:
+## Test Report:
 
 ![Screenshot from 2022-01-28 16-20-22](https://user-images.githubusercontent.com/38497405/151536227-68fa1ed1-415b-4d24-aca0-c039279b58d3.png)
-
-## Test Report view from Cypress Dashboard:
-
-![Screenshot from 2022-01-28 16-31-53](https://user-images.githubusercontent.com/38497405/151536375-eae52b46-7caf-4a59-a037-d0c0b8093fa5.png)
-![Screenshot from 2022-01-28 16-30-39](https://user-images.githubusercontent.com/38497405/151536379-62408ba5-a336-4e7b-94cb-48ae1390cbbe.png)
-![Screenshot from 2022-01-28 16-32-55](https://user-images.githubusercontent.com/38497405/151536387-958785f4-9a9c-46ac-8b3f-b281c42cf9f0.png)
