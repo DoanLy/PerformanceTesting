@@ -1,6 +1,8 @@
-export const peakLoadTesting = async (
+export const stressTesting = async (
   transName,
+  numTimes,
   numReq,
+  waitTime,
   func,
   expectedStatus
 ) => {
@@ -8,16 +10,24 @@ export const peakLoadTesting = async (
   let maxTime = 0;
   let minTime = Infinity;
 
-  const apiCallPromises = [];
+  let results = [];
 
-  for (let index = 0; index < numReq; index++) {
-    const response = func();
-    apiCallPromises.push(response);
+  const callApi = async () => {
+    const apiCallPromises = [];
+    for (let index = 0; index < numReq; index++) {
+      apiCallPromises.push(func());
+    }
+    const result = await Promise.all(apiCallPromises);
+    results = [...results, ...result];
+  };
+
+  for (let index = 0; index < numTimes; index++) {
+    callApi();
+    await new Promise((resolve) => setTimeout(resolve, waitTime));
   }
-
-  const results = await Promise.all(apiCallPromises);
+  console.log(results, "result stress test");
   for (let index = 0; index < results.length; index++) {
-    const times = results[index]?.time;
+    const times = results[index].time;
     totalTime += times;
     if (times > maxTime) {
       maxTime = times;

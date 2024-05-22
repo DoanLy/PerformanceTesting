@@ -1,27 +1,30 @@
-export const stressTesting = async (
+export const loadTesting = async (
   transName,
-  numTimes,
   numReq,
-  waitTime,
+  durationInSeconds,
   func,
   expectedStatus
 ) => {
   let totalTime = 0;
   let maxTime = 0;
   let minTime = Infinity;
-
   let results = [];
+  const startTime = Date.now();
 
-  for (let index = 0; index < numTimes; index++) {
-    const apiCallPromises = [];
-    for (let index = 0; index < numReq; index++) {
-      apiCallPromises.push(func());
+  const callApi = async () => {
+    const apiCallPromises = []; //gửi xong n request sẽ reset lại mảng
+    for (let j = 0; j < numReq; j++) {
+      apiCallPromises.push(func()); //tạo promise
     }
-    const result = await Promise.all(apiCallPromises);
+    const result = await Promise.all(apiCallPromises); // gọi func
     results = [...results, ...result];
-    await new Promise((resolve) => setTimeout(resolve, waitTime));
+  };
+
+  while ((Date.now() - startTime) / 1000 < durationInSeconds) {
+    callApi();
+    await new Promise((resolve) => setTimeout(resolve, 2000));
   }
-  console.log(results, "result");
+  // console.log("Load test log", results);
   for (let index = 0; index < results.length; index++) {
     const times = results[index].time;
     totalTime += times;
@@ -32,7 +35,6 @@ export const stressTesting = async (
       minTime = times;
     }
   }
-
   const avgTime = totalTime / results.length;
   const transactions = {
     transactionName: transName,
@@ -51,5 +53,5 @@ export const stressTesting = async (
       .length,
   };
 
-  return transactions;
+  return { a_transactions: transactions, a_results: results };
 };

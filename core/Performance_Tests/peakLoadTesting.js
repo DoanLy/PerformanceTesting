@@ -1,26 +1,23 @@
-export const loadTesting = async (
+export const peakLoadTesting = async (
   transName,
   numReq,
-  durationInSeconds,
   func,
   expectedStatus
 ) => {
   let totalTime = 0;
   let maxTime = 0;
   let minTime = Infinity;
-  let results = [];
-  const startTime = Date.now();
-  while ((Date.now() - startTime) / 1000 < durationInSeconds) {
-    const apiCallPromises = [];
-    for (let j = 0; j < numReq; j++) {
-      apiCallPromises.push(func());
-    }
-    const result = await Promise.all(apiCallPromises);
-    results = [...results, ...result];
+
+  const apiCallPromises = [];
+
+  for (let index = 0; index < numReq; index++) {
+    apiCallPromises.push(func());
   }
-  // console.log("Load test log", results);
+
+  const results = await Promise.all(apiCallPromises);
+
   for (let index = 0; index < results.length; index++) {
-    const times = results[index].time;
+    const times = results[index]?.time;
     totalTime += times;
     if (times > maxTime) {
       maxTime = times;
@@ -29,6 +26,7 @@ export const loadTesting = async (
       minTime = times;
     }
   }
+
   const avgTime = totalTime / results.length;
   const transactions = {
     transactionName: transName,
@@ -47,5 +45,8 @@ export const loadTesting = async (
       .length,
   };
 
-  return { a_transactions: transactions, a_results: results };
+  return {
+    a_transactions: transactions,
+    a_results: results,
+  };
 };

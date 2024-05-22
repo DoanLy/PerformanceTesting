@@ -1,12 +1,12 @@
-import { bookStoreConfig } from "../config/apiConfig.js";
-import axios from "../utils/axios.js";
+import { bookStoreConfig } from "../../config/apiConfig.js";
+import axios from "../../utils/axios.js";
 import fs from "fs";
 
 export const createAccountUser = async () => {
   try {
-    const randomUsername = Math.floor(Math.random() * 300) + 90;
+    const randomUsername = Math.floor(Math.random() * 10000) + 1000;
     const dataReq = {
-      userName: `lydtt292`,
+      userName: `lydtt${randomUsername}`,
       password: "Nguoiemyeu@2704",
     };
 
@@ -22,17 +22,22 @@ export const createAccountUser = async () => {
       userName: dataReq.userName,
       password: dataReq.password,
     };
-    fs.writeFileSync(
+    fs.appendFileSync(
       "D:/CODE/PerformanceTesting/data/user.txt",
-      dataReq.userName
+      `${dataReq.userName}\n` // Add newline character for each username
     );
 
     return data;
   } catch (error) {
+    console.log("ly er:", error);
     return {
       error: true,
+      // status: error?.response?.status,
+      // message: error?.response.data.message,
+      // urlApi: error?.response.config.url,
+      // dataRequest: error?.response.config.data,
       status: error?.response?.status,
-      message: error?.response.data.message,
+      // message: error?.response.statusText,
       urlApi: error?.response.config.url,
       dataRequest: error?.response.config.data,
     };
