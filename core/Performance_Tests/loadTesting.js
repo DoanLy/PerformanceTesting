@@ -22,7 +22,7 @@ export const loadTesting = async (
 
   while ((Date.now() - startTime) / 1000 < durationInSeconds) {
     callApi();
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   }
   // console.log("Load test log", results);
   for (let index = 0; index < results.length; index++) {
